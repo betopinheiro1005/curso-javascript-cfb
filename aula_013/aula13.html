@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Array - método push</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      /* declarando um array */
+      var cores = new Array(); // cria o array cores vazio
+
+      /* push adiciona elemento no final do array */
+
+      cores.push('Preto');
+      cores.push('Branco');
+      cores.push('Vermelho');
+      cores.push('Branco');
+      cores.push('Azul');
+
+      /*  cor = ["Preto", "Branco", "Vermelho", "Branco", "Azul"]  */
+
+      document.write('<h3>Cores</h3>');
+
+      for (var i = 0; i < cores.length; i++) {
+        document.write(cores[i] + '<br />');
+      }
+
+      document.write('<br />');
+
+      /* ======================================================= */
+      /* declarando um array */
+      var mochila = [];
+
+      var itens = [
+        'Faca',
+        'Pederneira',
+        'Corda',
+        'Lanterna',
+        'Luvas',
+        'Chave de fenda',
+        'Arame',
+      ];
+
+      mochila.push(5);
+      mochila.push(0);
+      mochila.push(3);
+
+      /*
+      mochila = [5, 0, 3]
+
+      mochila[0] = 5
+      mochila[1] = 0
+      mochila[2] = 3
+      */
+
+      document.write('<h3>Mochila</h3>');
+
+      document.write(itens[mochila[0]] + '<br>'); // itens[5] = "Chave de fenda"
+      document.write(itens[mochila[1]] + '<br>'); // itens[0] = "Faca"
+      document.write(itens[mochila[2]] + '<br>'); // itens[3] = "Lanterna"
+    </script>
+  </head>
+  <body></body>
+</html>

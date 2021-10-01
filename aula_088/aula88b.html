@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>atributo activeElement</title>
+		<meta charset="utf-8"/>
+    <style>
+      #cx{
+        margin-bottom: 10px;
+      }
+    </style>
+		<script>
+
+      var dvcx, frames;
+
+      function loop(){
+        dvcx.innerHTML = document.activeElement.tagName;
+        frames = requestAnimationFrame(loop);
+      }
+
+      function inicia(){
+        dvcx = document.getElementById("cx");
+        loop();
+      }
+
+      window.addEventListener("load", inicia);
+
+		</script>
+	</head>
+	<body>
+
+    <h1>Atributo activeElement</h1>
+
+    <div id="cx"></div>
+
+    <input type="text" name="txt">
+
+    <button>Teste</button>
+
+    <p>CFB Cursos - Curso de Javascript</p>
+
+    <img src="logo.png">
+
+	</body>
+</html>

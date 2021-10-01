@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>switch case</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var pos, msg, pontos;
+
+      var regra = /^[0-9]+$/;
+
+      var pontos = prompt('Informe o número de pontos (0 a 1000)');
+
+      if (pontos == '') {
+        alert('Não informada o número de pontos');
+      } else if (pontos == null) {
+        alert('Operação cancelada pelo usuário');
+      } else if (pontos.match(regra)) {
+        if (pontos > 1000) {
+          alert('Pontuação inválida');
+        } else {
+          if (pontos >= 950) {
+            pos = 1;
+          } else if (pontos >= 850) {
+            pos = 2;
+          } else if (pontos >= 750) {
+            pos = 3;
+          } else {
+            pos = 0;
+          }
+
+          switch (pos) {
+            case 1:
+              msg = 'Primeiro Lugar\nMedalha de Ouro';
+              break;
+            case 2:
+              msg = 'Segundo Lugar\nMedalha de Prata';
+              break;
+            case 3:
+              msg = 'Terceiro Lugar\nMedalha de Bronze';
+              break;
+            default:
+              msg = 'Não foi ao pódio\nNão obteve medalha';
+          }
+
+          switch (pos) {
+            case 1:
+            case 2:
+            case 3:
+              msg += '\nSubiu ao pódio';
+              break;
+            default:
+              msg += '\nNão obteve colocação';
+          }
+
+          alert(msg);
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

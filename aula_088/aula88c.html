@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>atributo activeElement</title>
+		<meta charset="utf-8"/>
+    <style>
+      #cx{
+        margin-bottom: 10px;
+      }
+      #txt_original{
+        margin-bottom: 10px;
+      }
+    </style>
+		<script>
+
+      function ativo(){
+        var cx = document.getElementById("texto_selecionado");
+        var elemento = document.activeElement;
+        var selecao = elemento.value.substring(elemento.selectionStart, elemento.selectionEnd);
+        cx.innerHTML = selecao;
+      }
+
+      function inicia(){
+        var texto = document.getElementById("txt_original");
+        texto.addEventListener("mouseup", ativo);
+      }
+
+      window.addEventListener("load", inicia);
+
+		</script>
+	</head>
+	<body>
+
+    <h1>Atributo activeElement</h1>
+
+    <textarea rows="5" cols="40" id="txt_original">CFB Cursos - Curso de Javascript - Aula 88 - Atributo activeElement</textarea><br>
+
+    texto selecionado: <span id="texto_selecionado"></span>
+
+	</body>
+</html>

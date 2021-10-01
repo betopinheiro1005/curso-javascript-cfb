@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objeto map - com elemento array</title>
+
+    <script>
+
+      /* O objeto map é uma coleção de pares (chave/valor)*/
+
+      let produtos = new Map([
+        ["01",["Mouse", "R$10,75"]],
+        ["02",["Teclado", "R$35,90"]],
+        ["03",["Monitor", "R$420,50"]],
+        ["04",["Gabinete", "R$150,00"]]
+      ]);
+
+      produtos.set("05",["Memória", "R$199,90"]);
+
+      for(p of produtos){
+        console.log(p[1]);
+      }
+
+      console.log("=======================");
+
+      /* ========================================================== */
+
+      for(p of produtos){
+        console.log(p[1][0]);
+      }
+
+      console.log("=======================");
+
+      /* ========================================================== */
+
+      for(p of produtos){
+        console.log(p[1][1]);
+      }
+
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Objeto map - Com elemento array</h3>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>método filter da classe array</title>
+
+    <script>
+
+      let dados = [
+        {id:15},
+        {id:0},
+        {id:-10},
+        {id:null},
+        {id:NaN},
+        {id:undefined},
+        {id:5.8},
+        {id:{}},
+        {id:2}
+      ];
+
+      let validos = dados.filter((el) => {
+        if(typeof(el.id) == 'number' && !isNaN(el.id) && (el.id >= 0)){
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      console.log(dados);
+      console.log(validos);
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Método Filter da classe Array</h3>
+  </body>
+</html>

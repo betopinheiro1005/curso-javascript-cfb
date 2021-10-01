@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operador spread</title>
+
+    <script>
+
+      const notas = [100, 60, 45];
+
+      console.log(notas);  // imprime o array notas
+      console.log(...notas);  // imprime os elementos individualmente. Não pode ser iterado.
+
+      /* ========================================================================== */
+
+      function soma(n1, n2, n3){
+        return n1 + n2 + n3;
+      }
+
+      var total = soma(...notas);
+
+      console.log(total);
+
+      /* ========================================================================== */
+
+      const jogador = [
+        nome = "Bruno",
+        pontos = 1000,
+        vidas = 7
+      ];
+
+      console.log(jogador);
+      console.log(...jogador);
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Operador spread</h3>
+  </body>
+</html>

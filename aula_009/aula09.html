@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>if com múltiplos retornos</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var regra = /^[0-9]+$/;
+      var nota = prompt('Informe a nota da prova (de 1 a 100)');
+
+      if (nota == '') {
+        alert('Nota não informada');
+      } else if (nota == null) {
+        alert('Operação cancelada pelo usuário');
+      } else if (nota.match(regra)) {
+        if (nota > 100) {
+          alert('Nota inválida');
+        } else {
+          var res;
+          //Aprovado com louvor  >95
+          //Aprovado             >=60
+          //Recuperacao          >=40 && <60
+          //Reprovado            <40
+          //Reprovado com louvor <20
+
+          if (nota >= 90) {
+            res = 'Aprovado com louvor';
+          } else if (nota >= 60) {
+            res = 'Aprovado';
+          } else if (nota >= 40) {
+            res = 'Recuperação';
+          } else if (nota >= 20) {
+            res = 'Reprovado';
+          } else {
+            res = 'Reprovado com louvor';
+          }
+
+          alert(res);
+        }
+      } else {
+        alert('Informe um valor inteiro positivo entre 0 e 100');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

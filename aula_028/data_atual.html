@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Data atual</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      var dt = new Date();
+
+      var diasem = dt.getDay(); // retorna o dia da semana (0,1,2,3,4,5,6)
+      var dia = dt.getDate(); // retorna o dia do mês
+      var mes = dt.getMonth(); // retorna o mês (0,1,2,4,5,6,7,8,9,10,11)
+      var ano = dt.getFullYear(); // retorna o ano com 4 digitos
+
+      var horas = dt.getHours(); // retorna as horas
+      var minutos = dt.getMinutes(); // retorna os minutos
+      var segundos = dt.getSeconds(); // retorna os segundos
+
+      var meses = new Array(
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro'
+      );
+      var dias_semana = new Array(
+        'Domingo',
+        'Segunda-Feira',
+        'Terça-Feira',
+        'Quarta-Feira',
+        'Quinta-Feira',
+        'Sexta-Feira',
+        'Sábado'
+      );
+
+      // document.write(dt);
+      document.write(
+        dias_semana[diasem] +
+          ', ' +
+          dia +
+          ' de ' +
+          meses[mes] +
+          ' de ' +
+          ano +
+          '<br/>'
+      );
+
+      if (horas < 10) {
+        horas = '0' + horas;
+      }
+
+      if (minutos < 10) {
+        minutos = '0' + minutos;
+      }
+
+      if (segundos < 10) {
+        segundos = '0' + segundos;
+      }
+
+      document.write(horas + ':' + minutos + ':' + segundos);
+    </script>
+  </head>
+  <body></body>
+</html>

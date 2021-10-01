@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO - prototype</title>
+
+    <script>
+
+      /* prototype apresenta um protótipo da classe */
+
+      Object.prototype
+
+      class Carro{
+
+        constructor(tpCarro, tpComb){
+          this.tipo = tpCarro; // 1 = passeio, 2 = transporte, 3 = combate
+          this.qtdeComb = 100;
+          this.ligado = false;
+          this.tipoComb = tpComb;  // 1 = gasolina, 2 = diesel, 3 = etanol
+        }
+
+        info(){
+          console.log("Qtde combustível:..... " + this.qtdeComb);
+          console.log("Ligado:............... " + (this.ligado ? "Sim" : "Não"));
+          console.log("Tipo de Combustível:.. " + this.tipoComb);
+          if(this.tipo == 1){
+            console.log("Tipo carro:........... Passeio");
+          } else if(this.tipo == 2){
+            console.log("Tipo carro:........... Transporte");
+          } else if(this.tipo == 3){
+            console.log("Tipo carro:........... Combate");
+          }
+        }
+
+        set setLigado(t){
+          this.ligado = t;
+        }
+
+        get getLigado(){
+          return this.ligado;
+        }
+
+        /* set: método usado para definir o valor de um atributo */
+        set setComb(v){
+          if(v < 0 || v > 100){
+            alert("Valor inválido!");
+          } else {
+            this.qtdeComb = v;
+          }
+        }
+
+        /* get: método usado para obter o valor de um atributo */
+        get getComb(){
+          return this.qtdeComb;
+        }
+
+      }
+
+      class CarroCombate extends Carro{
+        constructor(potTiro){
+          super(3,2);
+          this.tiros = 1000;
+          this.potTiro = potTiro;
+          this.blindagem = 100;
+        }
+
+        info(){
+          super.info();
+          console.log("Qtde Tiros:........... " + this.tiros);
+          console.log("Potência do tiro:..... " + this.potTiro);
+          console.log("Blindagem:............ " + this.blindagem);
+          console.log("------------------------------------------");
+        }
+      }
+
+      class CarroTransporte extends Carro{
+        constructor(potTiro){
+          super(2,2);
+        }
+      }
+
+      Carro.prototype.potencia = 500;
+      Carro.prototype.velocidade = 0;
+      Carro.prototype.velMax = 0;
+
+      Carro.prototype.info = function(){  // Sobrescreve a função info
+          // this.info();
+          console.log("Potência:.............. " + this.potencia);
+          console.log("Velocidade:............ " + this.velocidade);
+          console.log("Vel. máxima:........... " + this.velMax);
+      }
+
+      let c1 = new CarroCombate(100);
+      let c2 = new CarroTransporte();
+
+      // c1.setComb = 100;
+      c1.setLigado = true;
+
+      c1.info();
+
+      // c2.info();
+
+    </script>
+
+  </head>
+  <body>
+    <h3>POO - Prototype</h3>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto window</title>
+		<meta charset="utf-8"/>
+		<style></style>
+		<script>
+
+			/* Para funcionar, desbloqueie popups no navegador */
+
+			var minhaJanela;
+
+			function abreJ(){
+			 	minhaJanela=window.open("tmp.html","cfb","width=300,height=300,top=300,left=300");
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Objeto window</h1>
+		<h2>Método open</h2>
+
+		<button onclick="abreJ()">Abre Nova Janela</button>
+
+		<iframe name="cfb" src=""></iframe>
+
+	</body>
+</html>

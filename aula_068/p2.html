@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>CFB Cursos - Javascript</title>
+		<meta charset="utf-8"/>
+		<style>
+			body{
+				background-color:#f00;
+				color:#fff;
+				font-size: 20px;
+			}
+			a{color:#fff;}
+      hr{
+        margin-top: 35px;
+      }
+		</style>
+		<script>
+
+			/*
+			O objeto location é uma extensão do objeto window. Ele contém informações sobre a url.
+			Com ele é possível obter ou setar informações da url
+			*/
+
+			/* O método hash serve para passagem de parâmetros de uma página para outra em javascript */
+
+			var aux=location.hash;
+			document.write(aux + "<br />");
+
+			var dados=aux.split("#");
+			document.write("Array: " + dados + "<br />");
+
+			var v1 = dados[1];
+			var v2 = dados[2];
+			for(var i = 0; i < dados.length; i++){
+				document.write(dados[i] + "<br>");
+			}
+			document.write("<br />");
+
+			var host = location.host;
+			document.write("host: " + host + "<br />");
+
+			var hostname = location.hostname;
+			document.write("hostname: " + hostname + "<br /><br />");
+
+			var href = location.href;
+			document.write(href);
+			document.write("<br /><br />");
+
+			/* Setando a url. Irá redirecionar para a página especificada */
+			// href = location.href = "http://www.youtube.com/cfbcursos";
+
+			var origin = location.origin; //Protocolo,hostname,porta
+			document.write(origin);  // retorna o protocolo, o hostname e o número da porta (apenas se estiver online)
+			document.write("<br /><br />");
+
+			var caminho = location.pathname; // Caminho
+			document.write(caminho);
+			document.write("<br /><br />");
+
+			var porta = location.port; // Número da porta (apenas se estiver online)
+			document.write(porta);
+			document.write("<br />");
+
+			var protocolo = location.protocol;  //Protocolo
+			document.write(protocolo);
+			document.write("<br>");
+
+			document.write("<hr />");
+
+		</script>
+	</head>
+	<body>
+
+ 		<h1>Objeto Location</h1>
+		<h3>Propriedades hash, host, hostname, href, origin, pathname, port, protocol</h3>
+
+		<h1>Página 2 - p2.html</h1>
+
+		<a href="aula68.html">voltar</a>
+
+	</body>
+</html>

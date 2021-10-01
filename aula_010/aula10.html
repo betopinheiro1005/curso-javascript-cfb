@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>if aninhado</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var regra = /^[0-9]+$/;
+      var nota = prompt('Informe a nota da prova (de 0 a 100)');
+
+      if (nota == '') {
+        alert('Nota não informada');
+      } else if (nota == null) {
+        alert('Operação cancelada pelo usuário');
+      } else if (nota.match(regra)) {
+        if (nota > 100) {
+          alert('Nota inválida');
+        } else {
+          var res;
+
+          if (nota >= 90) {
+            if (nota == 100) {
+              res = 'Aprovado com excelência';
+            } else {
+              res = 'Aprovado com ótima nota';
+            }
+          } else if (nota >= 60) {
+            if (nota > 70) {
+              res = 'Aprovado com boa nota';
+            } else {
+              res = 'Aprovado';
+            }
+          } else if (nota >= 40) {
+            if (nota > 50) {
+              res = 'Recuperação';
+            } else {
+              res = 'Recuperação. Estude bastante para passar!';
+            }
+          } else if (nota >= 20) {
+            res = 'Reprovado por nota baixa';
+          } else {
+            res = 'Reprovado com louvor';
+          }
+
+          alert(res);
+        }
+      } else {
+        alert('Informe um valor inteiro positivo entre 0 e 100');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

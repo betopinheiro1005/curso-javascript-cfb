@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>formatação condicional</title>
+    <meta charset="utf-8" />
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      td,
+      tr,
+      th {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 5px;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <div id="titulo"></div>
+
+    <table id="tbnotas">
+      <tr>
+        <th>Alunos</th>
+        <th>Nota 1</th>
+        <th>Nota 2</th>
+        <th>Média</th>
+      </tr>
+      <tr>
+        <td>José</td>
+        <td id="n11"></td>
+        <td id="n12"></td>
+        <td id="n1"></td>
+      </tr>
+      <tr>
+        <td>Nair</td>
+        <td id="n21"></td>
+        <td id="n22"></td>
+        <td id="n2"></td>
+      </tr>
+      <tr>
+        <td>Alberto</td>
+        <td id="n31"></td>
+        <td id="n32"></td>
+        <td id="n3"></td>
+      </tr>
+      <tr>
+        <td>Débora</td>
+        <td id="n41"></td>
+        <td id="n42"></td>
+        <td id="n4"></td>
+      </tr>
+    </table>
+
+    <script>
+      var nomes = [];
+
+      nomes.push('José');
+      nomes.push('Nair');
+      nomes.push('Alberto');
+      nomes.push('Débora');
+
+      /* Criando um array bidimensional para armazenar as notas dos alunos */
+
+      function Create2DArray(rows) {
+        var nota_aluno = [];
+
+        for (var i = 0; i < rows; i++) {
+          nota_aluno[i] = [];
+        }
+
+        return nota_aluno;
+      }
+
+      var nota_aluno = Create2DArray(8);
+
+      /* Entrada de dados */
+
+      for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 2; j++) {
+          nota_aluno[i][j] = prompt(
+            'Nota ' + (j + 1) + ' bimestre de ' + nomes[i]
+          );
+          nota_aluno[i][j] = parseFloat(nota_aluno[i][j]);
+        }
+      }
+
+      /* Inserindo as notas na tabela */
+
+      var n11, n12, n21, n22, n31, n32, n41, n42;
+
+      n11 = nota_aluno[0][0];
+      n12 = nota_aluno[0][1];
+      n21 = nota_aluno[1][0];
+      n22 = nota_aluno[1][1];
+      n31 = nota_aluno[2][0];
+      n32 = nota_aluno[2][1];
+      n41 = nota_aluno[3][0];
+      n42 = nota_aluno[3][1];
+
+      document.getElementById('n11').innerHTML = n11;
+      document.getElementById('n12').innerHTML = n12;
+      document.getElementById('n21').innerHTML = n21;
+      document.getElementById('n22').innerHTML = n22;
+      document.getElementById('n31').innerHTML = n31;
+      document.getElementById('n32').innerHTML = n32;
+      document.getElementById('n41').innerHTML = n41;
+      document.getElementById('n42').innerHTML = n42;
+
+      /* Calculando a média para cada aluno */
+
+      var tabela = document.getElementById('tbnotas');
+      var nota, media;
+
+      for (var i = 1; i < tabela.rows.length; i++) {
+        nota =
+          parseFloat(tabela.rows[i].cells[1].innerHTML) +
+          parseFloat(tabela.rows[i].cells[2].innerHTML);
+        media = nota / 2;
+        tabela.rows[i].cells[3].innerHTML = media;
+      }
+
+      /* formatação condicional */
+
+      var n = [];
+      n[0] = document.getElementById('n1');
+      n[1] = document.getElementById('n2');
+      n[2] = document.getElementById('n3');
+      n[3] = document.getElementById('n4');
+
+      for (var i = 0; i < 4; i++) {
+        if (n[i].innerHTML <= 5) {
+          n[i].style.color = '#f00';
+        } else {
+          n[i].style.color = '#090';
+        }
+      }
+    </script>
+  </body>
+</html>

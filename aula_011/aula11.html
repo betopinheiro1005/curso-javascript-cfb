@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Blocos de comandos</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var regra = /^[0-9]+$/;
+
+      var idade = prompt('Informe a idade');
+
+      if (idade == '') {
+        alert('Idade não informada');
+      } else if (idade == null) {
+        alert('Operação cancelada pelo usuário');
+      } else if (idade.match(regra)) {
+        checaIdade();
+        alert('Operação realizada com sucesso');
+      } else {
+        alert('Informe um valor inteiro positivo');
+      }
+
+      function checaIdade() {
+        if (idade < 18) return alert('Menor de idade');
+        return alert('Maior de idade');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

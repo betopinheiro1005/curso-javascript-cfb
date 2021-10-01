@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>tratamento de erros - throw</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+      hr {
+        margin-top: 35px;
+      }
+    </style>
+
+    <script>
+      document.write('<h3>Tratando o erro</h3>');
+
+      var num; // Máximo 10
+
+      try {
+        num = prompt('Digite um valor');
+        if (num > 10) {
+          throw new Error('Valor inválido, o valor máximo é 10'); // lança uma exceção
+        }
+      } catch (e) {
+        console.log('ERRO: ' + e.message);
+        num = 10; // tratando o erro
+      } finally {
+        document.write('Valor: ' + num) + '<hr />';
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

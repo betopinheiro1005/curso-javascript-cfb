@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Web Storage - localStorage</title>
+		<meta charset="utf-8"/>
+		<style>
+      #info{
+        font-size: 20px;
+      }
+      button{
+        padding: 5px;
+        margin-right: 5px;
+      }
+    </style>
+		<script>
+
+			/* Web Storage permite que o browser armazene dados no formato cheve/valor.
+			Usando localStorage, esses dados não são excluídos ao se fechar a janela.
+			E não possuem data para expirar como nos cookies */
+
+        function eventos (){
+
+          if(typeof(Storage)!="undefined"){
+
+            var addKey = document.getElementById("btn1");
+            var getKey = document.getElementById("btn2");
+            var removeKey = document.getElementById("btn3");
+            var clearKeys = document.getElementById("btn4");
+
+            addKey.addEventListener("click", somarChave);
+            getKey.addEventListener("click", obterChave);
+            removeKey.addEventListener("click", removerChave);
+            clearKeys.addEventListener("click", limpaChaves);
+
+          } else {
+            document.write("Sem suporte a Web Storage!<br />");
+          }
+      }
+
+      function somarChave() {
+        localStorage.setItem("canal", "CFBCursos");
+        document.getElementById("info").innerHTML = "Dados adicionados ao Local Storage";
+      }
+
+      function obterChave(){
+        // var vcanal = localStorage.getItem("canal");
+        var vcanal = localStorage.canal;
+        document.getElementById("info").innerHTML = "value: " + vcanal;
+      }
+
+      function removerChave(){
+        localStorage.removeItem("canal");
+        document.getElementById("info").innerHTML = "Dados removidos do Local Storage";
+      }
+
+      function limpaChaves(){
+        localStorage.clear();
+        document.getElementById("info").innerHTML = "Todos os dados removidos do Local Storage";
+      }
+
+      window.addEventListener("load", eventos);
+
+		</script>
+	</head>
+	<body>
+
+			<h1>localStorage</h1>
+			<h2>Métodos setItem, getItem e removeItem</h2>
+
+      <button id = "btn1">Adicionar chave/valor</button>
+      <button id = "btn2">Obter valor</button>
+      <button id = "btn3">Remover chave/valor</button>
+      <button id = "btn4">Limpar tudo</button>
+
+      <p id="info"></p>
+
+	</body>
+</html>

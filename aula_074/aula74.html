@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>métodos createAttribute, removeAttribute e setAttributeNode</title>
+		<meta charset="utf-8"/>
+		<style>
+			button{
+				margin-right: 5px;
+			}
+		</style>
+		<script>
+
+			function inicia(){
+				var input = document.getElementById("fnum");
+				input.focus();
+				document.getElementById("btnDestaque").addEventListener("click",function(){
+					var num = input.value;
+					if((num < 0 || num > 7)){
+						alert("Valor inválido!");
+					} else {
+						var p=document.getElementsByTagName("p");
+						for(var i=0;i<p.length;i++){
+							p[i].removeAttribute("style");
+						}
+						var at=document.createAttribute("style");
+						at.value="color:#f00;font-size:20px";
+						p[num].setAttributeNode(at);
+					}
+					input.value = "";
+					input.focus();
+				});
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+		<h3>Métodos createAttribute, removeAttribute e setAttributeNode</h3>
+
+		<label for="fnum">Informe o número do elemento a destacar</label><br /><br />
+		<input type="number" id="fnum">
+		<button id="btnDestaque">Destacar</button><br><br>
+
+		<p>Curso de Javascript</p>
+		<p>Curso de HTML/HTML5</p>
+		<p>Curso de CSS3</p>
+		<p>Curso de PHP/MySQL</p>
+		<p>Curso de C++</p>
+		<p>Curso de Photoshop</p>
+		<p>Curso de Unity/C#</p>
+		<p>Curso de Flash</p>
+
+	</body>
+</html>

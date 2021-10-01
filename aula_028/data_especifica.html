@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Data atual</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      var diasem, dia, mes, ano, horas, minutos, segundos, meses, dias_semana;
+
+      // entre com o mês que deseja menos 1
+      var dt = new Date(1978, 02, 07, 10, 10, 10, 10); //Ano,Mes,Dia,Hora,Min,Seg,Mil
+
+      diasem = dt.getDay(); // getDay retorna o dia da semana (0,1,2,3,4,5,6)
+      dia = dt.getDate(); // retorna o dia do mês
+      mes = dt.getMonth(); // Month retorna o mês (0,1,2,4,5,6,7,8,9,10,11)
+      ano = dt.getFullYear(); // retorna o ano com 4 digitos
+
+      horas = dt.getHours(); // retorna as horas
+      minutos = dt.getMinutes(); // retorna os minutos
+      segundos = dt.getSeconds(); // retorna os segundos
+
+      meses = new Array(
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro'
+      );
+      dias_semana = new Array(
+        'Domingo',
+        'Segunda-Feira',
+        'Terça-Feira',
+        'Quarta-Feira',
+        'Quinta-Feira',
+        'Sexta-Feira',
+        'Sábado'
+      );
+
+      // document.write(dt);
+      document.write(
+        dias_semana[diasem] +
+          ', ' +
+          dia +
+          ' de ' +
+          meses[mes] +
+          ' de ' +
+          ano +
+          '<br/>'
+      );
+
+      if (horas < 10) {
+        horas = '0' + horas;
+      }
+
+      if (minutos < 10) {
+        minutos = '0' + minutos;
+      }
+
+      if (segundos < 10) {
+        segundos = '0' + segundos;
+      }
+
+      document.write(horas + ':' + minutos + ':' + segundos);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops FOR IN e FOR OF</title>
+
+    <script>
+
+        const aluno = {nome: "Bruno", sobrenome: "Campos"};
+        const notas = {n1: 80, n2: 75, n3: 92, n4: 85};
+
+        const info = {...aluno, ...notas};
+
+        for(var dado in aluno){
+          console.log(dado);  // imprime a propriedade
+        }
+
+        for(var dado in info){
+          console.log(info[dado]);  // imprime os valores das propriedades do array info
+        }
+
+        console.log("=================================");
+
+        /* ================================================================== */
+
+        let notas_aluno = [100, 80, 75, 30, 64, 47, 98, 81, 60];
+
+        for(var n of notas_aluno){
+          console.log(n);
+        }
+
+        console.log("=================================");
+
+        let aprovados = 0;
+        let reprovados = 0;
+
+        for(var n of notas_aluno){
+          n >= 60 ? aprovados++ : reprovados++;
+        }
+
+        console.log("Número de alunos aprovados: " + aprovados);
+        console.log("Número de alunos reprovados: " + reprovados);
+
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Loops FOR IN e FOR OF</h3>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>tratamento de erros - try catch finally</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+      hr {
+        margin-top: 35px;
+      }
+    </style>
+
+    <script>
+      document.write('<h3>Tratamento de exceções - try catch finally</h3>');
+
+      document.write('<h4>Sem erros no código em try</h4>');
+
+      try {
+        document.write('CFB Cursos' + '<br />');
+      } catch (e) {
+        document.write('Erro: ' + e.message);
+      } finally {
+        document.write('<hr />');
+      }
+
+      /* ====================================================== */
+
+      document.write('<h4>Com erro no código em try</h4>');
+
+      try {
+        document.writi('CFB Cursos' + '<br />');
+      } catch (e) {
+        document.write('Erro: ' + e.message);
+      } finally {
+        document.write('<hr />');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto location</title>
+		<meta charset="utf-8"/>
+		<style></style>
+		<script>
+
+			// location.assign("http://www.youtube.com/cfbcursos");   /* redireciona automaticamente a página e mantém o histórico */
+			// location.replace("http://www.youtube.com/cfbcursos");  /* semelhante ao assign, porém remove a url do histórico */
+
+			function p2(){
+			 	// location.assign("http://www.youtube.com/cfbcursos");
+			 	location.assign("p2.html");  /* tem a função de carregar um documento */
+			}
+
+			function rec(){
+				location.reload();  /* Faz automaticamente o carregamento da página */
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<h1>Objeto Location</h1>
+		<h3>Métodos assign, reload e replace</h3>
+
+		<button id="btnP2" onclick="p2()">Página 2</button>
+		<button id="btnReload" onclick="rec()">Recarregar</button>
+
+	</body>
+</html>

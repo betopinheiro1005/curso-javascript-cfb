@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Escopo de variáveis</title>
+    <meta charset="utf-8" />
+    <script>
+      var nomeCor = 'Vermelho';
+      var i = 0;
+
+      function cor() {
+        var nomeCor = 'Azul';
+        document.write(this.nomeCor + '<br>' + nomeCor + '<br>'); // imprime respectivamente vermelho e azul
+      }
+
+      cor();
+      for (i = 0; i < 10; i++) {}
+
+      document.write(i + '<br>'); // imprime 10
+    </script>
+  </head>
+  <body></body>
+</html>

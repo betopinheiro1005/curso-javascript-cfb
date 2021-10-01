@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Contador Javascript</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="titulo"></h2>
+
+    <script>
+      var regra = /^[0-9]+$/;
+
+      var inicial = prompt('Informe o número inicial');
+
+      if (inicial.match(regra)) {
+        var min = parseInt(inicial);
+        var final = prompt('Informe o número final');
+        if (final.match(regra)) {
+          var max = parseInt(final);
+
+          if (min > max) {
+            alert('Número final deve ser maior do que o número inicial!');
+          } else {
+            var faixa = 'Contador - ' + min + ' a ' + max;
+
+            document.getElementById('titulo').innerHTML = faixa;
+
+            contador(min, max);
+          }
+        } else {
+          alert('Permitido somente número inteiro positivo!');
+        }
+      } else {
+        alert('Permitido somente número inteiro positivo!');
+      }
+
+      function contador(min, max) {
+        document.write(min + '<br>');
+        if (min < max) {
+          contador(++min, max);
+        }
+      }
+    </script>
+  </body>
+</html>

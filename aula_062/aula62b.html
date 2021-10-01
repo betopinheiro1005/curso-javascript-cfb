@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto window</title>
+		<meta charset="utf-8"/>
+		<style></style>
+		<script>
+
+			/* Para funcionar, desbloqueie popups no navegador */
+
+			var minhaJanela1,minhaJanela2;
+
+			/* _blank abre em uma nova janela */
+			/* _self abre na mesma janela */
+
+			function abreJ(){
+			 	minhaJanela1=window.open("tmp.html","_blank","width=300,height=300,top=100,left=700");
+			 	minhaJanela2=window.open("tmp.html","_blank","width=300,height=300,top=300,left=300");
+			}
+			function fechaJ(){
+			 	minhaJanela1.close();
+			 	minhaJanela2.close();
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Objeto window</h1>
+		<h2>Métodos open, close</h2>
+
+		<button onclick="abreJ()">Abre Nova Janela</button>
+		<button onclick="fechaJ()">Fechar Janela</button>
+
+	</body>
+</html>

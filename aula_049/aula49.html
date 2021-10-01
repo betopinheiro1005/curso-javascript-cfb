@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>métodos para manipulação de strings</title>
+		<meta charset="utf-8"/>
+		<style>
+		</style>
+	</head>
+	<body>
+
+		<h1>Métodos para manipulação de strings</h1>
+		<h2>Métodos toString, trim e impressão de caracteres especiais</h2>
+
+		<script>
+
+			document.write("<hr />");
+
+			var texto="CFB Cursos\nCurso de\nJavascript";
+
+			/* Método toString */
+			/* Conversão de base */
+
+			var num = 15;
+
+			var res = num.toString();
+			var bin = num.toString(2);
+			var oct = num.toString(8);
+			var hex = num.toString(16);
+
+			document.write(res + "<br />");
+			document.write(bin + "<br />");
+			document.write(oct + "<br />");
+			document.write(hex + "<br /><br />");
+
+			/* Método trim - Retira espaços em branco antes e depois em uma string */
+			/* trim não funciona no HTML */
+
+			var texto2 = "        CFB Cursos - Curso de Javascript        ";
+
+			alert(texto2);
+			alert(texto2.trim());
+
+			/* Impressão de caracteres especiais */
+
+			var texto3 = "CFB \"Cursos\" - Curso de Javascript";
+			document.write(texto3 + "<br />");
+
+			texto3 = "CFB \'Cursos\' - Curso de Javascript";
+			document.write(texto3 + "<br />");
+
+			texto3 = "CFB \\Cursos\\ - Curso de Javascript";
+			document.write(texto3 + "<br />");
+
+			/* \n não funciona no HTML */
+			/* <br /> não funciona no método alert */
+			texto3 = "CFB\nCursos\nCurso de Javascript";
+			alert(texto3);
+
+		</script>
+
+	</body>
+</html>

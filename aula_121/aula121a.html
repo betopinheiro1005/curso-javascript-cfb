@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>método reduce da classe array</title>
+
+    <script>
+
+      /* O método reduce retorna um resultado que seria o resumo do array. */
+
+      let num = [0, 1, 2, 3, 4, 5];
+      let soma = num.reduce((n1, n2) => {
+        console.log(n1 + ' + ' + n2);
+        return n1 + n2;
+      });
+
+      console.log(soma);
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Método Reduce da classe Array</h3>
+  </body>
+</html>

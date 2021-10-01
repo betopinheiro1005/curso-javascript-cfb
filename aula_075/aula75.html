@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>método insertBefore e propriedade childNodes</title>
+		<meta charset="utf-8"/>
+		<style>
+			body{
+				margin-left: 20px;
+			}
+			#fnovo{
+				font-size: 18px;
+			}
+			button{
+				margin-left: 10px;
+				padding: 5px;
+				font-size: 18px;
+			}
+			#fnovo{
+				padding: 5px;
+			}
+		</style>
+		<script>
+
+			function inicia(){
+
+				document.getElementById("btnContar").addEventListener("click",contar);
+				document.getElementById("btnAdd").addEventListener("click",addElement);
+
+				function addElement(){
+					var lista=document.getElementById("listaElementos");
+					var texto=document.getElementById("fnovo");
+					var li=document.createElement("li");
+					li.textContent=texto.value;
+					lista.insertBefore(li, lista.childNodes[0]);
+					li.style.fontSize = "22px";
+					texto.value="";
+					texto.focus();
+				}
+
+				function contar(){
+					var lista=document.getElementById("listaElementos");
+					var num = lista.childNodes.length;
+					alert("Número de elementos = " + num);
+					var texto = document.getElementById("fnovo");
+					texto.focus();
+				}
+
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+		<h2>Método insertBefore e propriedade childNodes</h2>
+
+		<input type="text" id="fnovo">
+		<button id="btnAdd">Adicionar</button>
+		<button id="btnContar">Contar</button>
+		<br><br>
+
+		<ul id="listaElementos"></ul>
+
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>métodos e constantes matemáticas</title>
+    <meta charset="utf-8" />
+    <script>
+      var pi = Math.PI;
+      var e = Math.E;
+      var raiz_2 = Math.SQRT2;
+      var raiz_meio = Math.SQRT1_2;
+
+      var num1 = -10;
+      var abs = Math.abs(num1);
+
+      // métodos de arredondamento
+      var num2 = 10.3;
+      var num3 = 8.7;
+
+      var arredUp = Math.ceil(num2); // arredonda para cima
+      var arredDown = Math.floor(num2); // arredonda para baixo
+      var arred1 = Math.round(num2); // arredondamento padrão
+      var arred2 = Math.round(num3); // arredondamento padrão
+
+      // potênciação e radiciação
+
+      var num4 = 2;
+      var num5 = 3;
+      var num6 = 10;
+
+      var potenc1 = Math.pow(num4, num5);
+      var potenc2 = Math.pow(num4, num6);
+      var raiz1 = Math.sqrt(num5);
+      var raiz2 = Math.sqrt(num6);
+
+      // valor aleatório
+
+      var random1 = Math.random(); // valor aleatório entre 0 e 1
+      var random2 = Math.round(Math.random() * 10); // valor aleatório inteiro entre 0 e 10
+
+      var num7 = 59;
+
+      var result = '';
+      result += 'Sorteio da MegaSena: ';
+      for (var i = 0; i < 6; i++) {
+        result += Math.round(Math.random() * num7 + 1) + ' | ';
+        if (i == 5) {
+          result += '<br />';
+        }
+      }
+
+      // funções trigonométricas
+
+      var angulo1 = 0;
+
+      angRad1 = angulo1 * (Math.PI / 180);
+
+      var seno1 = Math.sin(angRad1);
+      var cosseno1 = Math.cos(angRad1);
+
+      var angulo2 = 45;
+
+      angRad2 = angulo2 * (Math.PI / 180);
+
+      var seno2 = Math.sin(angRad2);
+      var cosseno2 = Math.cos(angRad2);
+      var tangente2 = Math.tan(angRad2);
+
+      // logaritmos
+
+      var num8 = 2;
+      var log1 = Math.log10(num8);
+
+      // Métodos max e min
+
+      var min = Math.min(9, 24, 13, 10, 72, 5, 25, 41);
+      var max = Math.max(9, 24, 13, 10, 72, 5, 25, 41);
+
+      // apresentação de resultados
+
+      document.write('pi = ' + pi + '<br />');
+      document.write('e = ' + e + '<br />');
+      document.write('raiz quadrada de 2 = ' + raiz_2 + '<br />');
+      document.write('raiz quadrada de 1/2 = ' + raiz_meio + '<br />');
+      document.write('Valor absoluto de ' + num1 + ' = ' + abs + '<br />');
+      document.write(
+        'Valor arredondado de ' + num2 + ' para cima = ' + arredUp + '<br />'
+      );
+      document.write(
+        'Valor arredondado de ' + num2 + ' para baixo = ' + arredDown + '<br />'
+      );
+      document.write(
+        'Valor arredondado de ' + num2 + ' = ' + arred1 + '<br />'
+      );
+      document.write(
+        'Valor arredondado de ' + num3 + ' = ' + arred2 + '<br />'
+      );
+
+      document.write(
+        'Valor de ' + num4 + ' elevado a ' + num5 + ' = ' + potenc1 + '<br />'
+      );
+
+      document.write(
+        'Valor de ' + num4 + ' elevado a ' + num6 + ' = ' + potenc2 + '<br />'
+      );
+
+      document.write('Raiz quadrada de ' + num5 + ' = ' + raiz1 + '<br />');
+
+      document.write('Raiz quadrada de ' + num6 + ' = ' + raiz2 + '<br />');
+
+      document.write('Valor aleatório entre 0 e 1  = ' + random1 + '<br />');
+
+      document.write(
+        'Valor aleatório inteiro entre 0 e 10  = ' + random2 + '<br />'
+      );
+
+      document.write(result);
+
+      document.write('Seno de ' + angulo1 + ' = ' + seno1 + '<br />');
+      document.write('Cosseno de ' + angulo1 + ' = ' + cosseno1 + '<br />');
+
+      document.write('Seno de ' + angulo2 + ' = ' + seno2 + '<br />');
+      document.write('Cosseno de ' + angulo2 + ' = ' + cosseno2 + '<br />');
+      document.write('Tangente de ' + angulo2 + ' = ' + tangente2 + '<br />');
+
+      document.write(
+        'Logaritmo de ' + num8 + ' na base 10 = ' + log1 + '<br />'
+      );
+
+      document.write('Valor mínimo = ' + min + '<br />');
+      document.write('Valor máximo = ' + max + '<br />');
+    </script>
+  </head>
+  <body></body>
+</html>

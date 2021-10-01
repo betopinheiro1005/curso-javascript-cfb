@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>método match</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Strings - Método match</h1>
+    <p id="txt">CFB Cursos - Curso de Javascript - aula 46 do curso de javascript</p>
+
+    <script>
+      document.write('<hr />');
+
+      var texto, resultado, num_ocorrencias;
+
+      texto = document.getElementById('txt').innerHTML;
+
+      /*
+      Match busca por uma palavra dentro de uma string.
+      Se encontrá-la irá retorná-la. Caso contrário retorna null.
+      Match armazena o resultado dentro de um array.
+      O modificador i faz a busca sem levar em conta letras maiúsculas e minúsculas (case insensitive)
+      O modificador g faz busca de todas as ocorrências da palavra dentro da string.
+      */
+
+      busca('aula');
+      busca('html');
+      busca(/de/g);
+      busca(/javascript/gi);
+      busca(/o/gi);
+      busca(/[oa]/gi); // busca por todas as letras o e a dentro da string
+      busca(/[^oa]/gi); // exclui as letras o e a da busca
+      busca(/[a-g]/gi); // busca por todas as letras entre a e g
+      busca(/[^a-g]/gi); // exclui todas as lentras entre a e g  da busca
+
+      /* Metacaracteres */
+      busca(/\d/g); // busca por todos os caracterews que são numerais
+      busca(/\D/g); // busca por todos os caracteres que não são numerais
+      busca(/\w/g); // busca apenas por caracterews que são números e letras
+
+      function busca(string) {
+        resultado = texto.match(string);
+
+        if (resultado == null) {
+          document.write('Busca por: ' + string + '<br />');
+          document.write('Número de ocorrências: 0<br /><br />');
+        } else {
+          num_ocorrencias = resultado.length;
+
+          document.write('Busca por: ' + string + '<br />');
+          document.write(resultado + '<br />');
+
+          // for (var i = 0; i < num_ocorrencias; i++) {
+          //   if(i != num_ocorrencias - 1)
+          //     document.write(resultado[i] + ', ');
+          //   else
+          //       document.write(resultado[i]);
+          // }
+          // document.write('<br>');
+
+          document.write(
+            'Número de ocorrências: ' + num_ocorrencias + '<br /><br />'
+          );
+        }
+      }
+
+      // document.write(res + ' : ' + res.length + '<br>');
+
+      // document.write(res[1]);
+    </script>
+  </body>
+</html>

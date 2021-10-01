@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Método getElementsByTagName</title>
+    <meta charset="utf-8" />
+
+    <script></script>
+  </head>
+  <body>
+    <p>CFB Cursos</p>
+    <p>Curso de Javascript</p>
+    <p>Aula 25</p>
+    <p>www.youtube.com/cfbcursos</p>
+    <p>cfbcursos.com.br</p>
+
+    <hr />
+
+    <script>
+      var tagsP = document.getElementsByTagName('p');
+      document.write(tagsP[0].innerHTML);
+
+      tagsP[3].style.color = '#f00';
+
+      for (var i = 0; i < tagsP.length; i++) {
+        tagsP[i].style.border = '1px solid black';
+      }
+
+      // var tags = document.getElementsByTagName('*');
+
+      // // tags: 0 = html, 1 = head, 2 = title, 3 = script, 4 = body, 5 = h2, 6 = p, 7 = h2, 8 = p
+
+      // tags[8].innerHTML = 'NOVO TEXTO';
+      // tags[8].style.color = '#f00';
+    </script>
+  </body>
+</html>

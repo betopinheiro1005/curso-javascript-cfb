@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto window</title>
+		<meta charset="utf-8"/>
+		<style>
+      body{
+        font-size: 20px;
+      }
+		</style>
+		<script>
+
+
+			function inicia(){
+        var qtde = window.length;
+        var painel = document.getElementById("painel").innerHTML = qtde;
+        // window.frames[1].location = "http://cfbcursos.com.br";
+
+        for(var i = 0; i < qtde; i++){
+          window.frames[i].location = "http://cfbcursos.com.br";
+        }
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+ 		<h1>Objeto Window</h1>
+		<h2>Propriedades length e frames</h2>
+
+		<iframe src=""></iframe>
+		<iframe src=""></iframe>
+		<iframe src=""></iframe>
+		<iframe src=""></iframe>
+		<iframe src=""></iframe>
+
+		<!-- <iframe src="p2.html"></iframe>
+		<iframe src="p2.html"></iframe>
+		<iframe src="p2.html"></iframe>
+		<iframe src="p2.html"></iframe>
+		<iframe src="p2.html."></iframe> -->
+
+		<div id="painel"></div>
+
+	</body>
+</html>

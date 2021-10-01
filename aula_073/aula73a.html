@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>métodos createElement e appendChild</title>
+		<meta charset="utf-8"/>
+		<style>
+			body{
+				font-size: 20px;
+			}
+		</style>
+		<script>
+
+			/* createElement e appendChild são métodos da classe document */
+
+			var p = document.createElement("p");
+			p.textContent = "CFB Cursos";
+
+			function inicia(){
+				document.body.appendChild(p);
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+		<h3>Métodos createElement e appendChild</h3>
+
+	</body>
+</html>

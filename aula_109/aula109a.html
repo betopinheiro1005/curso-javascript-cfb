@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objeto map - métodos clear e delete</title>
+
+    <script>
+
+      /* O objeto map é uma coleção de pares (chave/valor)*/
+
+      let produtos = new Map([
+        ["01","Mouse"],
+        ["02","Teclado"],
+        ["03","Monitor"],
+        ["04","Gabinete"]
+      ]);
+
+      produtos.set("05","Memória");
+
+      /* O método delete apaga um elemento de map */
+
+      produtos.delete("03");  /* informe a chave do elemento a ser deletado */
+
+      console.log("Tamanho: " + produtos.size);
+
+      for(p of produtos){
+        console.log(p);
+      }
+
+      console.log("=======================");
+
+      /* ========================================================== */
+
+      /* O método clear apaga todos os elementos de map */
+
+      produtos.clear();
+
+      console.log("Tamanho: " + produtos.size);
+
+      for(p of produtos){
+        console.log(p);
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Objeto map - Métodos clear e delete</h3>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto window</title>
+		<meta charset="utf-8"/>
+		<style>
+			button{
+				margin-bottom: 15px;
+				padding: 5px;
+			}
+			#painel{
+				border:1px solid #000;
+				border-radius:10px;
+				padding:15px;
+				width:280px;
+				height:100px;
+			}
+		</style>
+		<script>
+
+			var lt,at,px,py,painel;
+
+			function info(){
+				lt = window.outerWidth;   // outerWidth retorna a largura externa (total) da janela (contando com as barras de menu e rolagem)
+				at = window.outerHeight;  // outerHeight retorna a altura externa (total) da janela (contando com as barras de menu e rolagem)
+				px = window.screenX;
+				py = window.screenY;
+				painel.innerHTML = "Tamanho da janela:<br />Largura externa: " + lt + " - Altura externa: " + at + "<br /><br />Posição da janela:<br />X:"+px+" - Y:"+py;
+			}
+
+			function inicia(){
+
+				document.getElementById("btnTam").addEventListener("click",info);
+				painel = document.getElementById("painel");
+
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+		<h1>Objeto Window</h1>
+		<h2>Métodos outerWidth, outerHeight, screenX, screenY</h2>
+
+		<button id="btnTam">Tamanho</button>
+
+		<div id="painel"></div>
+
+	</body>
+</html>

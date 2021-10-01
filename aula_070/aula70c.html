@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Web Storage - localStorage</title>
+		<meta charset="utf-8"/>
+		<style></style>
+		<script>
+
+			/* Web Storage permite que o browser armazene dados no formato cheve/valor.
+			Usando localStorage, esses dados não são excluídos ao se fechar a janela.
+			E não possuem data para expirar como nos cookies */
+
+			var vcorf,vcort,vnome;
+
+			if(typeof(Storage)!="undefine"){
+
+			}else{
+				document.write("Sem suporte a Web Storage!");
+			}
+
+			function gravar(){
+				vnome=document.getElementById("fnome").value;
+				localStorage.corf=vcorf;
+				localStorage.cort=vcort;
+				localStorage.nome=vnome;
+			}
+
+			function defineCor(op,cor){
+				if(op==1){
+					document.body.style.backgroundColor=cor;
+					vcorf=cor;
+				}else{
+					document.body.style.color=cor;
+					vcort=cor;
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+
+		<form name="dados">
+			<h3>Preferências</h3>
+			<label>Nome:</label><br>
+			<input type="text" name="fnome" id="fnome" size="20"><br><br>
+			<label>Cor fundo:</label><br>
+			<input type="radio" name="fcorF" onclick="defineCor(1,'#000')">Preto<br>
+			<input type="radio" name="fcorF" onclick="defineCor(1,'#fff')">Branco<br>
+			<input type="radio" name="fcorF" onclick="defineCor(1,'#f00')">Vermelho<br>
+			<input type="radio" name="fcorF" onclick="defineCor(1,'#0f0')">Verde<br>
+			<input type="radio" name="fcorF" onclick="defineCor(1,'#00f')">Azul<br><br>
+			<label>Cor texto:</label><br>
+			<input type="radio" name="fcorT" onclick="defineCor(2,'#000')">Preto<br>
+			<input type="radio" name="fcorT" onclick="defineCor(2,'#fff')">Branco<br><br>
+			<input type="button" value="Gravar" onclick="gravar()">
+		</form>
+
+	</body>
+</html>

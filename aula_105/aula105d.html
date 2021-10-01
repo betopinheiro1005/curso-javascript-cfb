@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos literais - delete</title>
+
+    <script>
+
+      const Veiculo = {
+        marca: "VW",
+        modelo: "Golf",
+        info: function(){
+          console.log("Marca: " + this.marca);
+          console.log("Modelo: " + this.modelo);
+        }
+      }
+
+      const Caracteristicas = {
+        cor: "Cinza",
+        cambio: "Automático"
+      }
+
+      delete Caracteristicas.cor;
+
+      /* assign concatena objetos */
+
+      const Carro = Object.assign(Veiculo, Caracteristicas);
+
+      console.log(Carro);
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Deletando propriedades em Objetos literais - delete</h3>
+  </body>
+</html>

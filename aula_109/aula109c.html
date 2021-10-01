@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objeto map - método forEach</title>
+
+    <script>
+
+      /* O objeto map é uma coleção de pares (chave/valor)*/
+
+      let produtos = new Map([
+        ["01","Mouse"],
+        ["02","Teclado"],
+        ["03","Monitor"],
+        ["04","Gabinete"]
+      ]);
+
+      produtos.set("05","Memória");
+
+      function info(chave, valor){
+        console.log("Chave: " + chave + " - Valor: " + valor);
+      }
+
+      produtos.forEach(info);
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Objeto map - Método forEach</h3>
+  </body>
+</html>

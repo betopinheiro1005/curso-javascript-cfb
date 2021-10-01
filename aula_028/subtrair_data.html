@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>manipulando datas - subtração</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      try {
+        var escolha = '';
+        var regra = /^[0-9]+$/;
+        var opc = prompt(
+          'Informe o que deseja subtrair. As opções são:\n1 = anos, 2 = meses, 3 = dias, 4 = horas, 5 = minutos, 6 = segundos'
+        );
+
+        if (opc == '') {
+          alert('Não informada a opcão');
+        } else if (opc == null) {
+          alert('Operação cancelada pelo usuário');
+        } else if (opc.match(regra)) {
+          if (opc == 0 || opc > 6) {
+            throw new Error('Opção inválida, entre com um valor de 1 a 6'); // lança uma exceção
+          } else {
+            var unidade_tempo;
+
+            switch (opc) {
+              case '1':
+                unidade_tempo = 'quantos anos';
+                break;
+              case '2':
+                unidade_tempo = 'quantos meses';
+                break;
+              case '3':
+                unidade_tempo = 'quantos dias';
+                break;
+              case '4':
+                unidade_tempo = 'quantas horas';
+                break;
+              case '5':
+                unidade_tempo = 'quantos minutos';
+                break;
+              case '6':
+                unidade_tempo = 'quantos segundos';
+                break;
+              default:
+                alert('Opção inválida!');
+            }
+
+            var qtd = prompt('Informe ' + unidade_tempo + ' deseja subtrair:');
+
+            if (qtd == '') {
+              alert('Não informado ' + unidade_tempo + ' deseja subtrair');
+            } else if (qtd == null) {
+              alert('Operação cancelada pelo usuário');
+            } else if (qtd.match(regra)) {
+              opc = parseInt(opc, 10);
+              qtd = parseInt(qtd, 10);
+
+              var data_atual = new Date(); // data atual
+              var nova_data = new Date();
+
+              switch (opc) {
+                case 1:
+                  escolha = nova_data.setFullYear(
+                    data_atual.getFullYear() - qtd
+                  );
+                  break;
+                case 2:
+                  escolha = nova_data.setMonth(data_atual.getMonth() - qtd);
+                  break;
+                case 3:
+                  escolha = nova_data.setDate(data_atual.getDate() - qtd);
+                  break;
+                case 4:
+                  escolha = nova_data.setHours(data_atual.getHours() - qtd);
+                  break;
+                case 5:
+                  escolha = nova_data.setMinutes(data_atual.getMinutes() - qtd);
+                  break;
+                case 6:
+                  escolha = nova_data.setSeconds(data_atual.getSeconds() - qtd);
+                  break;
+                default:
+                  escolha = 'Opção inválida!';
+              }
+
+              var diasem = nova_data.getDay(); // retorna o dia da semana (0,1,2,3,4,5,6)
+              var dia = nova_data.getDate(); // retorna o dia do mês
+              var mes = nova_data.getMonth(); // retorna o mês (0,1,2,4,5,6,7,8,9,10,11)
+              var ano = nova_data.getFullYear(); // retorna o ano com 4 digitos
+
+              var horas = nova_data.getHours(); // retorna as horas
+              var minutos = nova_data.getMinutes(); // retorna os minutos
+              var segundos = nova_data.getSeconds(); // retorna os segundos
+
+              var meses = new Array(
+                'Janeiro',
+                'Fevereiro',
+                'Março',
+                'Abril',
+                'Maio',
+                'Junho',
+                'julho',
+                'Agosto',
+                'Setembro',
+                'Outubro',
+                'Novembro',
+                'Dezembro'
+              );
+              var dias_semana = new Array(
+                'Domingo',
+                'Segunda-Feira',
+                'Terça-Feira',
+                'Quarta-Feira',
+                'Quinta-Feira',
+                'Sexta-Feira',
+                'Sábado'
+              );
+
+              // document.write(dt);
+              document.write(
+                dias_semana[diasem] +
+                  ', ' +
+                  dia +
+                  ' de ' +
+                  meses[mes] +
+                  ' de ' +
+                  ano +
+                  '<br/>'
+              );
+
+              if (horas < 10) {
+                horas = '0' + horas;
+              }
+
+              if (minutos < 10) {
+                minutos = '0' + minutos;
+              }
+
+              if (segundos < 10) {
+                segundos = '0' + segundos;
+              }
+
+              document.write(horas + ':' + minutos + ':' + segundos);
+            }
+          }
+        }
+      } catch (e) {
+        alert('ERRO: ' + e.message);
+      } finally {
+        document.write('<hr />');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>loop for</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+    </style>
+
+    <script>
+      var mochila = [
+        ['Corda', 1],
+        ['Cura', 10],
+        ['Lanterna', 1],
+        ['Pilhas', 20],
+      ];
+
+      for (var l = 0; l < 4; l++) {
+        for (var c = 0; c < 2; c++) {
+          document.write(mochila[l][c] + ' ');
+        }
+        document.write('<br>');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Web Storage - localStorage</title>
+		<meta charset="utf-8"/>
+		<style></style>
+		<script>
+
+			/* Web Storage permite que o browser armazene dados no formato cheve/valor.
+			Usando localStorage, esses dados não são excluídos ao se fechar a janela.
+			E não possuem data para expirar como nos cookies */
+
+			if(typeof(Storage)!="undefined"){
+				if(localStorage.visitas){
+					localStorage.visitas = Number(localStorage.visitas) + 1;
+				}else{
+					//localStorage.setItem("visitas",1);
+					localStorage.visitas = 1;
+				}
+				document.write("Visitas: "+localStorage.visitas);
+			}else{
+				document.write("Sem suporte a Web Storage!");
+			}
+
+		</script>
+	</head>
+	<body>
+
+			<h1>Web Storage - localStorage</h1>
+
+	</body>
+</html>

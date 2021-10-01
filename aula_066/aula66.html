@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto screen</title>
+		<meta charset="utf-8"/>
+		<style>
+
+			#painel{
+				width: 400px;
+				height: 500px;
+				border: 1px solid #000;
+				border-radius: 10px;
+				padding: 10px;
+			}
+
+		</style>
+		<script>
+
+			var painel;
+
+			/* O objeto screen exibe informações de configurações da tela */
+			function inicia(){
+				painel=document.getElementById("painel");
+				painel.innerHTML+="Resolução:" + screen.width + "px X "+ screen.height + "px<hr>";
+				painel.innerHTML+="Resolução disponível:" + screen.availWidth + "px X "+ screen.availHeight + "px<hr>";
+				painel.innerHTML+="Profundidade de cores (imagens): " + screen.colorDepth + "bits<hr>";
+				painel.innerHTML+="Resolução cor da tela (pixel): " + screen.pixelDepth + "bits/pixel<hr>";
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+ 		<h1>Objeto Screen</h1>
+		<h3>Métodos width, height, avaiWidth, availHeight, colorDepth, pixelDepth</h3>
+
+		<div id="painel"></div>
+
+	</body>
+</html>

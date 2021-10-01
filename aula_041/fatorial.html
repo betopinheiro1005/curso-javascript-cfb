@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Recursividade - Fatorial</title>
+    <meta charset="utf-8" />
+    <style>
+      div {
+        font-size: 30px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="resultado"></div>
+
+    <script>
+      var regra = /^[0-9]+$/;
+
+      var num = prompt('Informe um número entre 1 e 20');
+
+      if (num.match(regra)) {
+        if (num < 1 || num > 20) {
+          alert('Valor digitado não é um número de 1 a 20');
+        } else {
+          var result = '<h3>Fatorial</h3>' + num + '! = ' + fatorial(num);
+
+          document.getElementById('resultado').innerHTML = result;
+        }
+      } else {
+        alert('Deve ser digitado um número inteiro positivo!');
+      }
+
+      function fatorial(n) {
+        if (n == 1) {
+          return 1;
+        }
+        return n * fatorial(n - 1);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>CFB Cursos - Javascript</title>
+		<meta charset="utf-8"/>
+		<style>
+			body{
+				background-color:#f00;
+				color:#fff;
+				font-size: 20px;
+			}
+      hr{
+        margin-top: 35px;
+      }
+			a{color:#fff;}
+		</style>
+		<script>
+
+			/*
+			O objeto location é uma extensão do objeto window. Ele contém informações sobre a url.
+			Com ele é possível obter ou setar informações da url
+			*/
+
+			aux = location.search;  // search funciona de forma semelhante ao hash, porém faz a separação por ?
+			dados = aux.split("?");
+      document.write("Array: " + dados + "<br /><br />");
+      var v1 = dados[1];
+			v1.split("=")[1];
+			document.write(v1);
+
+			document.write("<hr />");
+
+		</script>
+	</head>
+	<body>
+
+ 		<h1>Objeto Location</h1>
+		<h3>Propriedade search</h3>
+
+		<h1>Página 2 - p2.html</h1>
+
+		<a href="aula68.html">voltar</a>
+
+	</body>
+</html>

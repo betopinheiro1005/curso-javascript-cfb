@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>atributo activeElement</title>
+		<meta charset="utf-8"/>
+		<script>
+
+			function ativo(){
+        var elemento = document.activeElement.tagName;
+        console.log(elemento);
+			}
+
+		</script>
+	</head>
+	<body onclick = ativo()>
+
+		<h1>Atributo activeElement</h1>
+
+    <input type="text" name="txt">
+
+    <button>Teste</button>
+
+    <p>CFB Cursos - Curso de Javascript</p>
+
+    <img src="logo.png">
+
+	</body>
+</html>

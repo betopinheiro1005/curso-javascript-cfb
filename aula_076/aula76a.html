@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>método replaceChild</title>
+		<meta charset="utf-8"/>
+		<style>
+
+		</style>
+		<script>
+
+			function inicia(){
+				var novoH1 = document.createElement("h1");  /* cria um elemento H1 (vazio) */
+        var listaCursos = document.getElementById("cfbcursos");
+        var antigoP = listaCursos.childNodes[9];  /* Seleciona o parágrafo com texto "Curso de C++" */
+        var txtH1 = document.createTextNode(antigoP.innerHTML);  /* O texto de H1 é o mesmo que antigoP */
+        novoH1.appendChild(txtH1);  /* adiciona ao elemento H1 o texto txtH1 */
+        listaCursos.replaceChild(novoH1,antigoP);  /* Substitui antigoP por nonoH1 */
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+		<h1>Método replaceChild</h1>
+
+		<div id="cfbcursos">
+			<p>Curso de Javascript</p>
+			<p>Curso de HTML/HTML5</p>
+			<p>Curso de CSS3</p>
+			<p>Curso de PHP/MySQL</p>
+			<p>Curso de C++</p>
+			<p>Curso de Photoshop</p>
+			<p>Curso de Flash</p>
+			<p>Curso de Unity/C#</p>
+		</div>
+
+	</body>
+</html>

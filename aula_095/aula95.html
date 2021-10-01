@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>declarando variáveis com LET e CONST</title>
+
+    <script>
+
+      /* Nas novas versões do Javascript não é obrigatório o uso de ponto-e-vírgula (;) no final dos comandos */
+      var num = 10;
+      var num = 100;
+
+      console.log(num);  /* retorna 100 */
+
+      /* =============================================================================================== */
+
+      /* Quando se usa let no mesmo escopo não é permitido ter duas variáveis com o mesmo nome */
+
+      let num1 = 10;
+      {let num1 = 100};
+
+      console.log(num1);  /* retorna 10 */
+
+      /* =============================================================================================== */
+
+      let num2 = 10;
+
+      {num2 = 100}  /* faz parte do escopo de let (como filho) */
+
+      console.log(num2);  /* retorna 100 */
+
+      /* =============================================================================================== */
+
+      /* uma constante (declarada com const) é uma variável que não pode ter seu valor alterado em nenhuma parte do código */
+
+      const num3 = 10;
+
+      // num3 = 5;  /* irá gerar um erro porque essa variável não pode ter o valor alterado */
+
+      console.log(num3);
+
+      /* =============================================================================================== */
+
+      const dobro = (n) => {   /* arrow function */
+        return n * 2;
+      }
+
+      console.log(dobro(4));
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Declarando variáveis com LET e CONST em Javascript</h3>
+  </body>
+</html>

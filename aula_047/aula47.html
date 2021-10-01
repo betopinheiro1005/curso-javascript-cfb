@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Métodos para manipulação de strings</title>
+		<meta charset="utf-8"/>
+		<style>
+		</style>
+	</head>
+	<body>
+
+		<h1>Métodos para manipulação de strings</h1>
+		<h2>Métodos search, replace, charAt, charCodeAt, fromCharCode, concat</h2>
+
+		<p id="txt">CFB Cursos - Curso de Javascript</p>
+
+		<script>
+
+			var resultado;
+
+			var texto=document.getElementById("txt").innerHTML;
+			var texto2 =  " - aula 47 do curso de javascript";
+			var texto3 = " - Texto de teste."
+
+			/* método search - Não retorna array. Retorna somente a posição da primeira ocorrência encontrada */
+
+			document.write("<hr />");
+
+			resultado = texto.search(/curso/i);
+			document.write(resultado + "<br />");
+
+			resultado = texto.search(/javascript/i);
+			document.write(resultado + "<br />");
+
+			/* método replace - Substitui determinado caractere dentro da string */
+
+			resultado = texto.replace(/curso/ig, 'aula');
+			document.write(resultado + "<br />");
+
+			/* método charAt - Retorna o caractere da posição especificada dentro da string */
+
+			resultado = texto.charAt(2);
+			document.write(resultado + "<br />");
+
+			/* método charCodeAt - Retorna o código ascii do caractere da posição especificada dentro da string */
+
+			resultado = texto.charCodeAt(0);
+			document.write(resultado + "<br />");
+
+			/* método fromCharCodeAt - Retorna o primeiro caractere encontrado com o código ascii espescificado */
+
+			resultado = String.fromCharCode(67);
+			document.write(resultado + "<br />");
+
+			/* método concat - Concatena strings */
+
+			resultado = texto.concat(texto2);
+			document.write(resultado + "<br />");
+
+			resultado = texto.concat(texto2 + texto3);
+			document.write(resultado + "<br />");
+
+
+		</script>
+
+	</body>
+</html>

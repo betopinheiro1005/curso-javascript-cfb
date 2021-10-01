@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>incremento e decremento de variáveis</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 22px;
+      }
+      hr {
+        margin-top: 35px;
+      }
+    </style>
+
+    <script>
+      /* pós-incremento */
+
+      document.write('<h3>Pós-incremento</h3>');
+
+      var num;
+      num = 10;
+
+      document.write(num + '<br />');
+      document.write(
+        num++ + ' - Primeiro exibe a variável e depois a incrementa<br />'
+      ); // exibe num e depois o incrementa
+      document.write(num + '<br />');
+
+      document.write('<hr />');
+
+      /* ================================================= */
+
+      document.write('<h3>Pré-incremento</h3>');
+
+      num = 10;
+
+      document.write(num + '<br />');
+      document.write(
+        ++num + ' - Primeiro incrementa a variável e depois a exibe<br />'
+      ); // Incrementa num e depois o exibe
+      document.write(num + '<br />');
+
+      document.write('<hr />');
+
+      /* ================================================= */
+
+      document.write('<h3>Invertendo o valor de uma variável</h3>');
+
+      num = 10;
+      document.write(-num + '<br />'); // inverte apenas ao ser exibido
+      document.write(num);
+
+      document.write('<hr />');
+
+      num = 10;
+      num *= -1;
+      document.write(num + '<br />');
+      document.write(num);
+
+      document.write('<hr />');
+
+      /* ================================================= */
+    </script>
+  </head>
+  <body></body>
+</html>

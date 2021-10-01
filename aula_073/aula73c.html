@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>métodos createElement e appendChild</title>
+		<meta charset="utf-8"/>
+		<style>
+			body{
+				margin-left: 20px;
+			}
+			#fnovo{
+				font-size: 18px;
+			}
+			button{
+				margin-left: 10px;
+				padding: 5px;
+				font-size: 18px;
+			}
+			#fnovo{
+				padding: 5px;
+			}
+		</style>
+		<script>
+
+			/* createElement e appendChild são métodos da classe document */
+
+			function inicia(){
+				document.getElementById("btnAdd").addEventListener("click",function(){
+					var lista=document.getElementById("listaElementos");
+					var texto=document.getElementById("fnovo");
+					var li=document.createElement("li");
+					li.textContent=texto.value;
+					lista.appendChild(li);
+					li.style.fontSize = "22px";
+					texto.value="";
+					texto.focus();
+				});
+			}
+
+			window.addEventListener("load",inicia);
+
+		</script>
+	</head>
+	<body>
+
+		<h1>Métodos createElement e appendChild</h1>
+
+		<input type="text" id="fnovo"><button id="btnAdd">Adicionar</button><br><br>
+
+		<ul id="listaElementos"></ul>
+
+
+	</body>
+</html>

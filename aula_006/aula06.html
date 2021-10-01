@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>método confirm</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var nome = prompt('Digite seu nome', 'Digite aqui'); // Se for clicado no botão "Cancelar" retorna null
+      if (nome == 'Digite aqui' || nome == '' || nome == null) {
+        alert('Nome não informado!');
+      } else {
+        var res = confirm('Seja bem-vindo, ' + nome + '!\nDeseja continuar?'); // Se for clicado no botão "OK" retorna true, se for clicado no botão "Cancelar" retorna false
+        alert(res);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

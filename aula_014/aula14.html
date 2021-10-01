@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>array - métodos push, pop, unshift, shift e splice</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 22px;
+      }
+    </style>
+    <script>
+      /*
+			push insere um elemento no final do array
+			unshift insere um elemento no início do array
+			pop remove um elemento no final do array
+			shift remove um elemento no início do array
+			splice remove um elemento em qualquer parte do array
+			*/
+
+      /* declarando o array mochila (vazio) */
+
+      //var cor=new Array();
+      var mochila = [];
+
+      /* Método push - inserindo elementos no array mochila */
+      mochila.push('Faca');
+      mochila.push('Corda');
+      mochila.push('Pederneira');
+      mochila.push('Chave');
+      mochila.push('Lanterna');
+      mochila.push('Pedra');
+
+      /* mochila = ["Faca", "Corda", "Pederneira", "Chave", "Lanterna", "Pedra"]; */
+
+      document.write('<h3>Metodos push, unshift, pop, shift e splice</h3>');
+
+      document.write('<h4>Metodo push</h4>');
+
+      exibir();
+
+      /* =================================================================== */
+
+      /* Método pop - removendo elemento no final do array */
+
+      mochila.pop();
+
+      /* mochila = ["Faca", "Corda", "Pederneira", "Chave", "Lanterna"]; */
+
+      document.write('<h4>Metodo pop</h4>');
+
+      exibir();
+
+      /* =================================================================== */
+
+      /* Método unshift - inserindo elemento no início do array */
+
+      mochila.unshift('Pedra');
+
+      /* mochila = ["Pedra", "Faca", "Corda", "Pederneira", "Chave", "Lanterna"]; */
+
+      document.write('<h4>Metodo unshift</h4>');
+
+      exibir();
+
+      /* =================================================================== */
+
+      /* Método shift - removendo elemento no início do array */
+
+      mochila.shift();
+
+      /* mochila = ["Faca", "Corda", "Pederneira", "Chave", "Lanterna"]; */
+
+      document.write('<h4>Metodo shift</h4>');
+
+      exibir();
+
+      /* =================================================================== */
+
+      /* Método splice - removendo elemento(s) numa posição específica array */
+
+      mochila.splice(1, 1); // remove Corda do array
+
+      /* mochila = ["Faca", "Pederneira", "Chave", "Lanterna"]; */
+
+      mochila.splice(2, 2); // remove Chave e Lanterna do array
+
+      /* mochila = ["Faca", "Pederneira"]; */
+
+      document.write('<h4>Metodo splice</h4>');
+
+      exibir();
+
+      /* =================================================================== */
+
+      function exibir() {
+        for (var i = 0; i < mochila.length; i++) {
+          document.write(mochila[i] + '<br>');
+        }
+        document.write('<hr />');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

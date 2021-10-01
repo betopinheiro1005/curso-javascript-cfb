@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>declaração de variáveis com let</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var num = 10; // variável global - pode ser acessada em qualquer escopo
+
+      document.write(num + '<br>');
+
+      if (num == 10) {
+        num = 5;
+        document.write(num + '<br>');
+      }
+
+      document.write(num + '<hr>');
+
+      /* ====================================================================== */
+
+      var num = 10; // variável global - pode ser acessada em qualquer escopo
+
+      document.write(num + '<br>');
+
+      if (num == 10) {
+        let num = 5; // variável só pode ser acessada dentro do escopo (no bloco de códigos em que foi declarada)
+        document.write(num + '<br>');
+      }
+
+      document.write(num + '<hr>');
+
+      /* ====================================================================== */
+
+      let num2 = 10;
+
+      document.write(num2 + '<br>');
+
+      if (num2 == 10) {
+        num2 = 5;
+        document.write(num2 + '<br>');
+      }
+
+      document.write(num2 + '<hr>');
+
+      /* ====================================================================== */
+
+      let num3 = 10;
+
+      document.write(num3 + '<br>');
+
+      if (num3 == 10) {
+        let num3 = 5;
+        document.write(num3 + '<br>');
+      }
+
+      document.write(num3 + '<hr>');
+    </script>
+  </head>
+  <body></body>
+</html>

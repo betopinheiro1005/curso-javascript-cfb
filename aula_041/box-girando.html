@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>CFB Cursos - Javascript</title>
+    <meta charset="utf-8" />
+    <style>
+      #box {
+        border: 1px solid #000;
+        background-color: #f00;
+        display: flex;
+        color: #fff;
+        font-family: Arial;
+        font-weight: bold;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        left: 30px;
+        top: 30px;
+        font-size: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <div id="box">Orion 3</div>
+
+    <script>
+      var obj = document.getElementById('box');
+      var ang = 0;
+      var anima;
+      function girar() {
+        obj.style.transform = 'rotate(' + ang + 'deg)';
+        ang++;
+        if (ang > 360) {
+          ang = 0;
+        }
+        anima = requestAnimationFrame(girar);
+      }
+      girar();
+    </script>
+  </body>
+</html>

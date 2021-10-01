@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formulários - forms e elements</title>
+    <style>
+      label {
+        display: block;
+      }
+      input {
+        display: block;
+      }
+      input[type='submit'],
+      label {
+        margin-top: 10px;
+      }
+      hr {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Manipulando formulários com forms e elements</h3>
+    <form name="curso1" id="curso1" action="#" method="post">
+      <label>Nome</label>
+      <input type="text" name="fNome" id="teste" value="Primeiro - 1" />
+      <label>Senha</label>
+      <input type="password" name="fSenha" value="123" />
+      <input type="submit" name="btEnviar" value="Enviar" />
+    </form>
+
+    <hr />
+    <script>
+      var form1 = document.forms[0]; // aponta para o formulário
+      var el = form1.elements; // aponta para os elementos do formulário
+
+      for (var i = 0; i < el.length - 1; i++) {
+        el[i].style.backgroundColor = '#ddd';
+        // el[i].value = 'CFBCursos';
+      }
+
+      btnSubmit = document.getElementById('curso1').elements[2];
+      btnSubmit.style.backgroundColor = '#0a0';
+      btnSubmit.style.color = '#fff';
+    </script>
+  </body>
+</html>

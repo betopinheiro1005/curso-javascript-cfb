@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operação ternária</title>
+
+    <script>
+
+      /* teste lógico ? SE verdadeiro : SE falso  */
+
+      let n1 = 10;
+      let n2 = 10;
+      let op = false;
+
+      n1 == n2 ? console.log("Igual") : console.log("Diferente");
+
+      /* ======================================================= */
+
+      const r = op ? "Igual" : "Diferente";
+
+      console.log(r);
+
+      /* ======================================================= */
+
+      op = false;
+
+      const r2 = op && "Igual";  /* retorna false */
+
+      console.log(r2);
+
+      /* ======================================================= */
+
+      op = true;
+
+      const r3 = op && "Igual";  /* retorna Igual */
+
+      console.log(r3);
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Operação ternária</h3>
+  </body>
+</html>

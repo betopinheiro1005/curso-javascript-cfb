@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>objeto navigator</title>
+		<meta charset="utf-8"/>
+		<style>
+
+			#painel{
+				width: 400px;
+				height: 500px;
+				border: 1px solid #000;
+				border-radius: 10px;
+				padding: 10px;
+			}
+
+		</style>
+		<script>
+
+			var painel;
+
+			function localizar(pos){
+				var c = pos.coords;
+				painel.innerHTML+="Loc: Lat: " + c.latitude + " - Lon: " + c.longitude + "<hr>";
+			}
+
+			function verifica(){
+				painel=document.getElementById("painel");
+				painel.innerHTML="Nome do Browser: " + navigator.appName + "<hr>"; // browsers modernos sempre retornam Netscape
+				painel.innerHTML+="Versão do Browser: " + navigator.appVersion + "<hr>";  // versão do browser
+				painel.innerHTML+="Cookies: " + navigator.cookieEnabled + "<hr>";  // Verifica se tem cookies habilitados ou não
+				navigator.geolocation.getCurrentPosition(localizar);  // retorna a localização geográfica de onde estamos
+				painel.innerHTML+="Idioma: " + navigator.language + "<hr>";  // idioma do browser
+				painel.innerHTML+="onLine: " + navigator.onLine + "<hr>";  // Diz se o browser está online ou não
+				painel.innerHTML+="S.O.: " + navigator.platform + "<hr>";  // Indica o sistema operacional que está rodando
+				painel.innerHTML+="Engine: " + navigator.product + "<hr>";  // obtém a engine do browser
+				painel.innerHTML+="Agente: " + navigator.userAgent + "<hr>";  // agente enviado ao browser pelo servidor
+			}
+
+			window.addEventListener("load",verifica);
+
+		</script>
+	</head>
+	<body>
+
+ 		<h1>Objeto Navigator</h1>
+		<h3>Métodos appName, appVersion, cookieEnabled, geolocation, language, online, plataform, produt, userAgent</h3>
+
+		<div id="painel"></div>
+
+	</body>
+</html>

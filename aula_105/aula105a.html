@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos literais</title>
+
+    <script>
+
+      const Carro = {
+        marca: "VW",
+        modelo: "Golf",
+        info: function(){
+          console.log("Marca: " + this.marca);
+          console.log("Modelo: " + this.modelo);
+        }
+      }
+
+      Carro.info();
+
+      Carro.marca = "Honda";
+      Carro.modelo = "HRV";
+
+      Carro.info();
+
+      Carro["marca"] = "GM";
+      Carro["modelo"] = "Camaro";
+
+      Carro.info();
+
+      // console.log(Carro.marca);
+      // console.log(Carro.modelo);
+
+
+    </script>
+
+  </head>
+  <body>
+    <h3>Objetos literais</h3>
+  </body>
+</html>

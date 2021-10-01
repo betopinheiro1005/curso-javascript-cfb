@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+
+    <script>
+
+      /* converter um JSON em um objeto literal e vice-versa */
+
+      let colabJSON='{"colaboradores":[{"nome":"Bruno","salario":10000,"idade":40},{"nome":"Bernardo","salario":13500,"idade":32},{"nome":"Carlos","salario":8200,"idade": 25},{"nome":"Fernando","salario":35000,"idade": 38},{"nome":"Norberto","salario":5000,"idade":21}]}';
+
+      let colabOBJ = [
+        {"nome":"Bruno","salario":10000,"idade":40},
+        {"nome":"Bernardo","salario":13500,"idade":32},
+        {"nome":"Carlos","salario":8200,"idade": 25},
+        {"nome":"Fernando","salario":35000,"idade": 38},
+        {"nome":"Norberto","salario":5000,"idade":21}
+      ];
+
+      let colab = {"nome":"Bruno","salario":10000,"idade":40};
+
+      /* parse --> converte o JSON em um objeto literal (texto) */
+
+      /* Convertendo o JSON em um objeto */
+      let c_obj = JSON.parse(colabJSON)  /* converte o JSON para um objeto */
+
+      /* stringify --> converte o objeto em JSON */
+
+      /* Convertendo o objeto em JSON */
+      let c_json = JSON.stringify(colabOBJ)  /* converte o objeto em JSON */
+
+      console.log(c_obj);
+      console.log("----------------------------------");
+      console.log(c_obj.colaboradores);
+      console.log("-----------------------------------");
+      console.log(c_obj.colaboradores[0]);
+      console.log("-----------------------------------");
+      console.log(c_obj.colaboradores[0].nome);
+      console.log("====================================");
+      console.log(c_json);
+      console.log("====================================");
+      console.log(colab);
+      console.log("-------------------");
+      console.log(JSON.stringify(colab));
+
+    </script>
+
+  </head>
+  <body>
+    <h3>JSON</h3>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>array - métodos indexOf, concat, join, sort, e reverse</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-size: 20px;
+      }
+      hr {
+        margin-top: 25px;
+      }
+    </style>
+    <script>
+      /* declarando as variáveis */
+      var mochila = [],
+        mochila1 = [],
+        mochila2 = [],
+        elemento,
+        pos,
+        mochilaVirg;
+
+      document.write('<h3>Métodos indexOf, concat, join, sort e reverse</h3>');
+
+      /* =================================================================== */
+
+      mochila1.push('Faca');
+      mochila1.push('Corda');
+      mochila1.push('Pederneira');
+      mochila1.push('Chave');
+      mochila1.push('Lanterna');
+      mochila1.push('Pedra');
+      mochila1.push('Mouse');
+
+      mochila2.push('Arame');
+      mochila2.push('Luvas');
+      mochila2.push('Joelheira');
+      mochila2.push('Meias');
+      mochila2.push('Moeda');
+      mochila2.push('Canivete');
+
+      mochila1.pop();
+
+      /* =================================================================== */
+
+      document.write('<h4>mochila1</h4>');
+      document.write(
+        'Número de elementos do array mochila1: ' +
+          mochila1.length +
+          '<br /><br />'
+      ); /* Tamanho do array mochila1 */
+      exibir(mochila1);
+
+      document.write('<h4>mochila2</h4>');
+      document.write(
+        'Número de elementos do array mochila2: ' +
+          mochila2.length +
+          '<br /><br />'
+      ); /* Tamanho do array mochila2 */
+      exibir(mochila2);
+
+      /* =================================================================== */
+
+      document.write('<h3>Método indexOf</h3>');
+
+      elemento = 'Lanterna';
+      pos = mochila1.indexOf(elemento);
+      info(elemento, pos);
+
+      elemento = 'Arame';
+      pos = mochila1.indexOf(elemento);
+      info(elemento, pos);
+
+      function info(elemento, pos) {
+        if (pos == -1) {
+          document.write(
+            '<p>O elemento ' + elemento + ' não está na mochila1</p>'
+          );
+        } else {
+          document.write(
+            '<p>O elemento ' + elemento + ' está na mochila1 na posição ' + pos
+          );
+        }
+      }
+
+      document.write('<hr />');
+
+      /* =================================================================== */
+
+      document.write('<h3>Método concat</h3>'); // concatena arrays
+
+      mochila = mochila1.concat(mochila2);
+
+      document.write('<h4>mochila</h4>');
+      document.write(
+        'Número de elementos do array mochila: ' +
+          mochila.length +
+          '<br /><br />'
+      ); /* Tamanho do array mochila */
+      exibir(mochila);
+
+      /* =================================================================== */
+
+      document.write('<h3>Método join</h3>'); // exibe os elementos de um array separados por vírgula em uma string
+
+      mochilaVirg = mochila.join();
+
+      document.write(
+        '<h4>mochila com elementos separados por vírgula em uma string</h4>'
+      );
+      document.write(
+        mochilaVirg + '<hr />'
+      ); /* Exibe os elementos separados por vírgula em uma string */
+
+      /* =================================================================== */
+
+      document.write('<h3>Método sort</h3>');
+
+      document.write(
+        '<h4>mochila com elementos em ordem alfabética crescente</h4>'
+      );
+      mochila.sort();
+      exibir(mochila);
+
+      document.write('<h3>Método reverse</h3>');
+
+      document.write(
+        '<h4>mochila com elementos em ordem alfabética decrescente</h4>'
+      );
+      mochila.reverse();
+      exibir(mochila);
+
+      /* =================================================================== */
+
+      function exibir(nomeArray) {
+        for (var i = 0; i < nomeArray.length; i++) {
+          document.write(nomeArray[i] + '<br>');
+        }
+        document.write('<hr />');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

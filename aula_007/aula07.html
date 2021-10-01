@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>teste condicional - if else</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var senha, confirma;
+
+      var msgOk = 'Ok, as senhas digitadas conferem!';
+      var msgErro = 'Erro: as senhas digitadas não conferem!';
+
+      var senha = prompt('Digite a senha');
+
+      if (senha == '' || senha == null) {
+        alert('Senha não informada!');
+      } else {
+        var confirma = prompt('Redigite a senha');
+        if (confirma == senha) {
+          alert(msgOk);
+        } else {
+          alert(msgErro);
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

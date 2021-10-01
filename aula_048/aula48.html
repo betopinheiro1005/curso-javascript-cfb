@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>métodos para manipulação de strings</title>
+		<meta charset="utf-8"/>
+		<style>
+		</style>
+	</head>
+	<body>
+
+		<h1>Métodos para manipulação de strings</h1>
+		<h2>Métodos indexOf, lastIndexOf, localeCompare, slice, split, substr, toLowerCase, toUpperCase</h2>
+
+		<p id="txt">CFB Cursos - Curso de Javascript</p>
+
+		<script>
+
+			document.write("<hr />");
+
+			var texto1 = document.getElementById("txt").innerHTML;
+			var texto2 = texto1;
+
+			var resultado;
+
+			/* método indexOf - retorna a posição do primeiro caractere encontrado - É case sensitive */
+
+			resultado = texto1.indexOf('J');
+			verifica();
+
+			// document.write(resultado + "<br />");
+
+			resultado = texto1.indexOf('j');  // Não encontra e retorna -1
+			verifica();
+
+			/* método lastIndexOf - retorna a posição do último caractere encontrado - É case sensitive */
+
+			resultado = texto1.indexOf('C');
+			verifica();
+
+			function verifica(){
+				if(resultado == -1){
+					document.write("Caractere não encontrado" + "<br /><br />");
+				} else {
+					document.write("Posição " + resultado + "<br /><br />");
+				}
+			}
+
+			/*
+			método localeCompare - faz a comparação entre duas strings.
+			Se o resultado for 0, as strings são iguais.
+			Se o resultado for diferente de 0, as strings são diferentes.
+			*/
+
+			resultado = texto1.localeCompare(texto2);
+			compara();
+
+			resultado = texto1.localeCompare('CFB Cursos Curso de Javascript');
+			compara();
+
+			function compara(){
+				if(resultado == 0){
+					document.write("As strings são iguais<br /><br />");
+				} else {
+					document.write("As strings são diferentes<br /><br />");
+				}
+			}
+
+			/* método slice - corta a string em um ponto específico */
+
+			resultado = texto1.slice(4, 10);
+			document.write(resultado + "<br /><br />");
+
+			resultado = texto1.slice(22, 32);
+			document.write(resultado + "<br /><br />");
+
+			/* método split - cria um array com base em um separador especificado */
+
+			resultado = texto1.split(" ");
+
+			for(var i = 0; i < resultado.length; i++){
+				document.write(resultado[i] + "<br>");
+			}
+
+				document.write("<br>");
+
+			/* método substr - é semelhante ao método slice, mas indica a posição inicial e o tamanho do corte */
+
+			resultado = texto1.substr(4,6);
+			document.write(resultado + "<br />");
+
+			resultado = texto1.substr(22,10);
+			document.write(resultado + "<br /><br />");
+
+			/* método toLowerCase - converte todas as letras para minúsculos */
+
+			resultado = texto1.toLowerCase();
+			document.write(resultado + "<br />");
+
+			/* método toUpperCase - converte todas as letras para maiúsculos */
+
+			resultado = texto1.toUpperCase();
+			document.write(resultado + "<br />");
+
+			/* combinando métodos */
+
+			resultado=texto1.toUpperCase().substr(22,10);
+			document.write(resultado + "<br />");
+
+		</script>
+
+	</body>
+</html>

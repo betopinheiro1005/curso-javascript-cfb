@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>operadores && (and) e || (or)</title>
+    <meta charset="utf-8" />
+
+    <script>
+      var regra = /^[0-9]+$/;
+      var idade = prompt('Informe a sua idade');
+      var msg;
+
+      if (idade == null) {
+        alert('Operação cancelada');
+      } else if (idade.match(regra)) {
+        if (idade < 16) {
+          msg = 'Você não pode votar';
+        } else if (idade == 16 || idade >= 70) {
+          msg = 'O voto é opcional\n';
+        } else {
+          msg = 'O voto é obrigatório\n';
+        }
+
+        if (idade >= 16 && idade <= 40) {
+          msg += 'Horário preferencial para votar: das 09:00hs às 13:00hs';
+        } else if (idade > 40) {
+          msg += 'Horário preferencial para votar: das 13:00hs às 17:00hs';
+        }
+
+        alert(msg);
+      } else {
+        alert('A idade deve ser um núnero inteiro positivo!');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
