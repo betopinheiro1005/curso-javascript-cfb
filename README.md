@@ -1,7 +1,8 @@
 # Curso de Javascript  
-## CFB (Bruno Pinho Campos)  
-### Link dos vídeos  
-<https://www.youtube.com/watch?v=lcKo-ycLDNw&list=PLx4x_zx8csUj3IbPQ4_X5jis_SkCol3eC>
+## CFB Cursos (Bruno Pinho Campos)  
+
+### [Vídeos do curso](https://www.youtube.com/watch?v=lcKo-ycLDNw&list=PLx4x_zx8csUj3IbPQ4_X5jis_SkCol3eC)  
+
 ### Lista de aulas  
 
 Aula 01 - documentwrite  
